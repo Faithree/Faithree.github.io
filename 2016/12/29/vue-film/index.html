@@ -10,7 +10,7 @@
 Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm install3. npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue Film Demo">
-<meta property="og:url" content="https://github.com/Faithree/2016/12/29/vue/index.html">
+<meta property="og:url" content="https://github.com/Faithree/2016/12/29/vue-film/index.html">
 <meta property="og:site_name" content="矮仔要健身">
 <meta property="og:description" content="1这是一个模仿猫眼APP的Vue项目,实现了基本的功能， 从上到下具体分为三大块 HEADER SECTION FOOTER
 使用的技术1vue2.0+vuex+mint+bootstrap+router+jsonp
@@ -19,7 +19,7 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
 <meta property="og:image" content="https://github.com/Faithree/images/two.png">
 <meta property="og:image" content="https://github.com/Faithree/images/third.png">
 <meta property="og:image" content="https://github.com/Faithree/images/four.png">
-<meta property="og:updated_time" content="2016-12-29T02:28:18.407Z">
+<meta property="og:updated_time" content="2016-12-29T02:39:50.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue Film Demo">
 <meta name="twitter:description" content="1这是一个模仿猫眼APP的Vue项目,实现了基本的功能， 从上到下具体分为三大块 HEADER SECTION FOOTER
@@ -67,9 +67,9 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/Faithree"></form>
@@ -78,10 +78,10 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vue-film" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/12/29/vue/" class="article-date">
-  <time datetime="2016-12-29T02:28:06.842Z" itemprop="datePublished">2016-12-29</time>
+    <a href="/2016/12/29/vue-film/" class="article-date">
+  <time datetime="2016-12-29T02:37:30.427Z" itemprop="datePublished">2016-12-29</time>
 </a>
     
   </div>
@@ -108,14 +108,17 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
 <h3 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">由于大量使用了面向对象的写法,和高效利用组件的重复使用，在封装一个组件的时候，都是通过获取url中的参数来进行判断，而不是多次重复构建组建，浪费资源</div><div class="line">还有就是在home.vue里面的多个功能模块,(正在热映，即将上映,Top250)都是通过一个一个传递不同的参数进行拉去数据.</div><div class="line">[豆瓣API](https://developers.douban.com/wiki/?title=api_v2)</div></pre></td></tr></table></figure>
 <h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">因为不太熟悉vue-resource或者是官方推荐的axios,自己手写了一个jsonp 在http文件下</div></pre></td></tr></table></figure>
 <h3 id="下一页功能"><a href="#下一页功能" class="headerlink" title="下一页功能"></a>下一页功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">因为没有使用mint ui的下拉刷新,然后自己写了一个上一页下一页的按钮，逻辑不难，这里不细说.</div></pre></td></tr></table></figure>
-<h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于项目不是太大,嵌套结构也就两三层，并且内部父子组件数据传递使用了emit props 所以vuex并没有大量使用，两个地方使用了vuex 一个是search.vue里面的和firstCom.vue之间使用了，还有就是购买页面，他们都有一个共性，同级组件间数据传递，因为event bus实在是太难用了.</div></pre></td></tr></table></figure>
+<h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">由于项目不是太大,嵌套结构也就两三层，并且内部父子组件数据传递使用了emit props 所以vuex并没有大量使用，</div><div class="line">两个地方使用了vuex 一个是search.vue里面的和firstCom.vue之间使用了，还有就是购买页面，他们都有一个共性，同级组件间数据传递，因为event bus实在是太难用了.</div></pre></td></tr></table></figure>
 <h3 id="我的页面"><a href="#我的页面" class="headerlink" title="我的页面"></a>我的页面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是用了mint ui构建的一个组件，含登陆,注册 还有我的订单，我的订单是跟home页面的购买时同步的,</div></pre></td></tr></table></figure>
 <h3 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">豆瓣接口拉取数据较慢，所以在路由组件的过程中会出现空白现象，加入了一个css loading 的动画，</div><div class="line">页面过度使用了css Animate 使动画效果更多选择</div></pre></td></tr></table></figure>
+<h3 id="共同学习"><a href="#共同学习" class="headerlink" title="共同学习"></a>共同学习</h3><blockquote>
+<p>联系:方式359790031@qq.com.<br>QQ:359790031@qq.com</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/Faithree/2016/12/29/vue/" data-id="cix9r8edt0001oco2mvbvt4cy" class="article-share-link">Partager</a>
+      <a data-url="https://github.com/Faithree/2016/12/29/vue-film/" data-id="cix9rjneu0001jgo2ljhtdk6i" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +129,7 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
   
   
     <a href="/2016/12/29/Hello/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Hello</div>
     </a>
   
@@ -159,12 +162,12 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/12/29/vue/">Vue Film Demo</a>
+            <a href="/2016/12/29/vue-film/">Vue Film Demo</a>
           </li>
         
           <li>
@@ -184,7 +187,7 @@ Quick Start1231. git clone https://github.com/Faithree/vue2.0-film.git2. npm ins
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 陈<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
